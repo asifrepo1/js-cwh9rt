@@ -13,6 +13,11 @@ const promise = new Promise((resolve, reject) => {
   }
 });
 
-promise.then((result) => {
-  console.log(result);
-});
+//Chain Promise  catch error if it happened before the catch not after catch block
+promise.then((result) =>
+  console.log(result + '!').then((results2) => console.log(results2 + '?'))
+);
+//Status of Promise
+//Promise -> Pending ->  Settled ==> Resolved
+
+//Promise give one state
